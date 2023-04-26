@@ -1,0 +1,98 @@
+#option{
+    
+background-color: #D9D9D9;
+    border-color: darkblue;
+    width: 112%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+margin-top: 0;
+border-radius: 1em;
+    border: 1px solid #ccc;
+    padding-left: 32px; 
+    } 
+#input{
+    margin-left: 2em;
+}    
+
+    
+.ville_cp{
+    display: flex;
+    flex-direction: row;
+        gap: 2em;
+}
+.ville_cp  h5{
+    margin-left:2em ;
+}
+.ville_cp #h5{
+    margin-left:1em ; 
+}
+
+.tel,.Email{ 
+margin-left: 2em;
+background-color: #D9D9D9;
+    border-color: darkblue;
+    width: 90%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+margin-top: 0;
+border-radius: 1em;
+    border: 1px solid #ccc;
+    padding-left: 32px; 
+}
+.tel{
+    padding-left:11em;  
+}
+#h5{
+    margin-left:2em ; 
+}
+
+#em{
+margin-left: 2em;
+}
+.icn_email{
+    color: rgb(10, 11, 12);
+    position: absolute;
+   font-size: 20px;/* taill de icon */
+    left: 1.7em;
+    top: 2.65em;
+     color: #939599;
+    }
+    .btn_suivant2{
+        margin-top: 2.1em;
+        margin-left: 2.5em;
+        background-color: #214CD1;
+        box-shadow: 0px 0px 3px 1px #214CD1 ;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 80%;
+        height: 3em;
+        
+      }
+      
+      .btn_suivant2 h5{
+
+        font-size: 16px; 
+        margin-top: 0.2em;
+        margin-right: 1.5em;  }
+.country{ 
+width: 10em;
+z-index: 1;
+background-color: #D9D9D9;
+border-radius: 1em;
+border:1px solid  #D9D9D9 ;
+margin-top: -2em;
+margin-left: 2em;
+}
+.lb{
+    margin-top: -2em;
+}
+#lnk{
+    display: none;
+   margin-top: -5.2em;
+    
+}
+

@@ -1,0 +1,37 @@
+{
+    "users": [
+      {
+        "id": 1,
+       
+        "password": "monmotdepasse1",
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "date_de_naissance": "1980-01-01",
+        "ville": "Paris",
+        "codePostal": "75001",
+        "telephone": "01 23 45 67 89",
+        "email": "utilisateur1@gmail.com",
+        "autreChecked":"",
+        "checked":"",
+        "motivation":""
+
+      },
+      {
+        "id": 2,
+        "password": "monmotdepasse2",
+        "nom": "Martin",
+        "prenom": "Sophie",
+        "date_de_naissance": "1990-02-02",
+        "ville": "Marseille",
+        "codePostal": "13001",
+        "telephone": "04 56 78 90 12",
+        "email": "utilisateur2@gmail.com",
+        "autreChecked":"",
+        "checked":"",
+        "motivation":""
+
+      },
+      ...
+    ]
+  }
+  

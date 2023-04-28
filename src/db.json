@@ -1,37 +1,19 @@
 {
-    "users": [
-      {
-        "id": 1,
-       
-        "password": "monmotdepasse1",
-        "nom": "Dupont",
-        "prenom": "Jean",
-        "date_de_naissance": "1980-01-01",
-        "ville": "Paris",
-        "codePostal": "75001",
-        "telephone": "01 23 45 67 89",
-        "email": "utilisateur1@gmail.com",
-        "autreChecked":"",
-        "checked":"",
-        "motivation":""
-
-      },
-      {
-        "id": 2,
-        "password": "monmotdepasse2",
-        "nom": "Martin",
-        "prenom": "Sophie",
-        "date_de_naissance": "1990-02-02",
-        "ville": "Marseille",
-        "codePostal": "13001",
-        "telephone": "04 56 78 90 12",
-        "email": "utilisateur2@gmail.com",
-        "autreChecked":"",
-        "checked":"",
-        "motivation":""
-
-      },
-      ...
-    ]
-  }
-  
+  "users": [
+    {
+      "Nom": "said",
+      "Prenom": "sas",
+      "Date_de_naissance": "2003-05-10",
+      "Situation": "En recherche d'emploi",
+      "selectedOption": "female",
+      "id": 1,
+      "ville": "Chlef",
+      "codePostal": "15545",
+      "telephone": "555555555",
+      "email": "saiddidoubibou@gmail.com",
+      "checked": "Internet",
+      "autreChecked": false,
+      "motivation": "NJHBVG"
+    }
+  ]
+}

@@ -19,22 +19,32 @@ const txt=(event)=>{const val=event.target.value;setMsg("*le champe est facultat
 setYet(val);
 } 
 
-function traiter_submit(event) {
+async function traiter_submit(event) {
    event.preventDefault();
-     if (yet){
+     if (yet){ 
+      try{
+         const response1 = await fetch("http://localhost:3500/users?_sort=id&_order=desc&_limit=1");
+         const [lastUser] = await response1.json();
+         
+         // Récupérer l'id du dernier utilisateur créé
+         const lastUserId = lastUser.id;
       //envoyer un requette post
-      const data={yet:yet};
+      const data={motivation:yet};
       const requette={
-         method:"POST",
+         method:"PATCH",
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify(data),
        } 
+       
  
-       fetch("http://localhost:3500/users",requette)
-       .then((response)=>response.json())
-       .then((data)=>console.log(data))
-       .catch((error)=>console.error(error));
-
+       const response=await fetch(`http://localhost:3500/users/${lastUserId}`,requette);
+       const info=await response.json();
+          console.log(info);
+       
+      }
+      catch(error){
+         console.error(error);
+      }
 
      }
      alert(" Succès:Formulaire soumis !");

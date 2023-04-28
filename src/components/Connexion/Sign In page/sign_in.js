@@ -21,28 +21,51 @@
     const [a, setA] = useState(false);
     const [b, setB] = useState(false);
 
-    const traiter_submit =(event)=>
-    { 
-      event.preventDefault();
-        console.log(a,b);
-      if(a&&b)
-      { 
-      fetch("http://localhost:3500/users?email=${email}&password=${password}",{method:'GET',})
-      .then((response)=>response.json())
-      .then((data)=>console.log(data))
-      .then((data)=>
-           {if(data.length>0) alert("connecte");
-           else alert("Email ou mot de passe n'existe pas");}   )
-      .catch(error => console.error(error));
+    const traiter_submit = async (event) => {   
+  event.preventDefault();
+  //console.log(a, b);
+  if (a && b) {
+    try {
+      const response = await fetch(`http://localhost:3500/users?email=${email}&password=${password}`, { method: 'GET' });
+      const data = await response.json(); 
+      console.log(data);
+      if (data.length > 0) { 
+        alert("connecte");
+      } else {
+        alert("Email ou mot de passe n'existe pas");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    alert("verifier les champs");
+  }
+  //console.log(`email  ${email} ,mot de passe ${password} `);
+}
 
-      }
-      else{
-        alert("verifier les champs")
-      }
-      //recuperer les donne entres 
-      console.log(`email  ${email} ,mot de passe ${password} `);
+// const traiter_submit =(event)=>
+//     { 
+//       event.preventDefault();
+//         console.log(a,b);
+//       if(a&&b)
+//       { 
+//       fetch("http://localhost:3500/users?email=${email}&password=${password}",{method:'GET',})
+//       .then((response)=>response.json())
+//       .then((data)=>console.log(data))
+//       .then((data)=>
+//            {if(data.length>0) alert("connecte");
+//            else alert("Email ou mot de passe n'existe pas");}   )
+//       .catch(error => console.error(error));
+
+//       }
+//       else{
+//         alert("verifier les champs")
+//       }
+//       //recuperer les donne entres 
+//       console.log(`email  ${email} ,mot de passe ${password} `);
     
-          }
+//           }
+
 
           function isValidEmail(email) 
           {

@@ -13,22 +13,37 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Sign_up3()
 {
-   const traiter_submit=(event)=>{
+  const traiter_submit = async (event) => {
     event.preventDefault();
      if (bool) {
+      try{
+        const response1 = await fetch("http://localhost:3500/users?_sort=id&_order=desc&_limit=1");
+        const [lastUser] = await response1.json();
+        
+        // Récupérer l'id du dernier utilisateur créé
+        const lastUserId = lastUser.id;
+
       // Envoyer les données à l'API ou effectuer d'autres actions ici
       const data={checked:checked,autreChecked:autreChecked    }
         const requette={
-          method:"POST",
+          method:"PATCH",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
         } 
 
-        fetch("http://localhost:3500/users",requette)
-        .then((response)=>response.json())
-        .then((data)=>console.log(data))
-        .catch((error)=>console.error(error));
+        const response=await fetch(`http://localhost:3500/users/${lastUserId}`,requette);
+      const info=await response.json();
+         console.log(info);
+      if(info){}
+      else { alert("error")} 
+
       window.location.href = "/inscrire/suivant3";
+      }
+      catch(error){
+        console.error(error);
+      }
+
+
 
      }
      else{
@@ -98,7 +113,7 @@ return(
 
       {autreChecked &&
         <div>
-        <input className='autre'  type="text" placeholder="Saisir autre chose" />
+        <input className='autre'  type="text" placeholder="Saisir autre chose"/>
       </div>
       }
     

@@ -69,27 +69,34 @@ else{setC(true)}
     }
 
 
-    function traiter_submit(event)
+    async function  traiter_submit(event)
     {   event.preventDefault();console.log(a,b,c,d,e);
       if(a&&b&&c&&d&&e){
+        try{
         const data={Nom:Nom,Prenom:Prenom,Date_de_naissance:Date_de_naissance,Situation:Situation,selectedOption:selectedOption}
-
         const requette={ 
           method:"POST",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
         } 
 
-        fetch("http://localhost:3500/users",requette)
-        .then((response)=>response.json())
-        .then((data)=>console.log(data))
-        .catch((error)=>console.error(error));
+        const response= await fetch("http://localhost:3500/users",requette);
+            const info=await response.json();
+            console.log(info);
+            if(info)
+            {}    
+            else{alert("error")}  
+      }
+      catch(error){
+   console.error(error);      }
+        
 
 
 
 
         window.location.href = "/inscrire/suivant1";
        } 
+
        else{
         alert("verifier les champs")
        }
